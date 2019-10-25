@@ -12,3 +12,6 @@ puts "Freddy Krueger"
 puts "The Joker"
 puts "Joffrey Baratheon"
 puts "Norman Bates"
+print "Overall, we have "                            # this will print the last 3 lines in just onle line
+print 11
+puts " great students."
