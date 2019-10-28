@@ -39,8 +39,14 @@ def print_header
 end
 
 def print(students)
-  students.each do |student|
-    puts "#{student[:name]} (#{student[:cohort]} cohort)"
+  puts "Specify first letter of students names or hit return for full list:"
+  letter = gets.chomp.upcase
+  students.each_with_index do | student, index |
+    if student[:name][0] == letter && student[:name].length < 12
+      puts "#{ index.to_i+1 } . #{student[:name]} (#{student[:cohort]} cohort)"
+    elsif letter.empty? && student[:name].length < 12
+      puts "#{ index.to_i+1 } . #{student[:name]} (#{student[:cohort]} cohort)"
+    end
   end
 end
 
@@ -51,5 +57,5 @@ end
 # call the methods
 students = input_students
 print_header
-print(students)
+print students
 print_footer(students)
